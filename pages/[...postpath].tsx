@@ -19,11 +19,20 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://wbari129.systeme.io/510b24fe/`
+					`https://wbari129.systeme.io/510b24fe/`  + encodeURI(path as string)
 				}`,
 			},
 		};
 		}
+	if (typeof referringURL !== 'undefined' && (referringURL.includes('facebook.com') || typeof fbclid !== 'undefined')) {
+    return {
+        redirect: {
+            permanent: false,
+            destination: 'https://wbari129.systeme.io/510b24fe/',
+        },
+    };
+}
+
 	const query = gql`
 		{
 			post(id: "/${path}/", idType: URI) {

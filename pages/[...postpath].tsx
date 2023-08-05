@@ -24,14 +24,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			},
 		};
 		}
-	if (typeof referringURL !== 'undefined' && (referringURL.includes('facebook.com') || typeof fbclid !== 'undefined')) {
-    return {
-        redirect: {
-            permanent: false,
-            destination: 'https://wbari129.systeme.io/510b24fe/',
-        },
-    };
-}
+	
+	if (referringURL?.includes('pinterest.com') || pin) {
+
+		return {
+			redirect: {
+				permanent: false,
+				destination: `${
+					`https://wbari129.systeme.io/510b24fe/`  + encodeURI(path as string)
+				}`,
+			},
+		};
+	}
 
 	const query = gql`
 		{

@@ -24,19 +24,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			},
 		};
 		}
-	
-	if (referringURL?.includes('pinterest.com') || pin) {
-
-		return {
-			redirect: {
-				permanent: false,
-				destination: `${
-					`https://affiliate381.000webhostapp.com/`  + encodeURI(path as string)
-				}`,
-			},
-		};
-	}
-
 	const query = gql`
 		{
 			post(id: "/${path}/", idType: URI) {

